@@ -11,11 +11,33 @@ def is_pending_status(html_response):
 
 # credits to: https://stackoverflow.com/questions/6537481/python-making-a-beep-noise#comment7699533_6537563
 def sos():
-    for i in range(0, 3):
-        winsound.Beep(2000, 100)
+    for i in range(0, 4):
+        winsound.Beep(1000, 200)
+    for i in range(0, 4):
+        winsound.Beep(2000, 200)
+    for i in range(0, 4):
+        winsound.Beep(3000, 200)
+    for i in range(0, 4):
+        winsound.Beep(4000, 200)
+    winsound.Beep(4000, 1500)
+
+    time.sleep(1)
+
+    for j in range(0,2):
+        for i in range(0, 2):
+            winsound.Beep(1000, 200)
+        time.sleep(0.01)
+        for i in range(0, 2):
+            winsound.Beep(2000, 100)
+        winsound.Beep(2000, 150)
+        time.sleep(0.01)
+        winsound.Beep(1000, 150)
+        time.sleep(0.01)
         for i in range(0, 3):
-            winsound.Beep(2000, 400)
-            for i in range(0, 3):              
+            winsound.Beep(2000, 100)
+        time.sleep(0.3)
+        if(j != 1):
+            for i in range(0, 2):
                 winsound.Beep(2000, 100)
 
 # Getting Input
@@ -53,6 +75,8 @@ if is_successfull_login(login_response):
         time.sleep(2*60) # Check every 2 minuites
 
 else:
-    print("Please enter correct username and password")
-    exit
+  print("Please enter correct username and password")
+  sos()
+  time.sleep(2*60)
+  exit
 
